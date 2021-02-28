@@ -12,14 +12,14 @@ def do_snapshot(tp):
         sn = Snapshot()
         if tp == "txt":
             with open('snapshot.txt', 'a') as f:
-                f.write("SNAPSHOT" + str(i) + ":"
-                        + str(sn.time_st) + ":"
-                        + str(sn.cpu) + "  "
-                        + str(sn.memory) + "  "
-                        + str(sn.v_memory) + "  "
-                        + str(sn.io_inf_r) + "  "
-                        + str(sn.io_inf_w) + "  "
-                        + str(sn.net) + "  ")
+                f.write("SNAPSHOT" + str(i) + ":")
+                f.write(str(sn.time_st) + ":")
+                f.write(str(sn.cpu) + "  ")
+                f.write(str(sn.memory) + "  ")
+                f.write(str(sn.v_memory) + "  ")
+                f.write(str(sn.io_inf_r) + "  ")
+                f.write(str(sn.io_inf_w) + "  ")
+                f.write(str(sn.net) + "  ")
             f.close()
 
         elif tp == "json":
