@@ -19,7 +19,7 @@ def do_snapshot(tp):
                 f.write(str(sn.v_memory) + "  ")
                 f.write(str(sn.io_inf_r) + "  ")
                 f.write(str(sn.io_inf_w) + "  ")
-                f.write(str(sn.net) + "  ")
+                f.write(str(sn.net) + "\n")
             f.close()
 
         elif tp == "json":
@@ -35,6 +35,7 @@ def do_snapshot(tp):
 
             with open('snapshot.json', 'a') as f:
                 json.dump(data, f, ensure_ascii=False)
+                f.write("\n")
             f.close()
         else:
             print("Incorrect type for the file")
