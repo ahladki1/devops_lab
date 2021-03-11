@@ -1,11 +1,10 @@
 import requests
 
-token = {'Authorization': 'token'}
+token = {'token'}
 
 
 def get_pulls(state):
-    resp = requests.get('https://api.github.com/repos/alenaPy/devops_lab/pulls',
-                        headers=token)
+    resp = 'https://api.github.com/repos/alenaPy/devops_lab/pulls'
     resp_search = 'https://api.github.com/search/issues?q=is:pr%20label:'
 
     if state in ['open', 'closed']:
@@ -22,4 +21,5 @@ def get_pulls(state):
                             params={'per_page': '100'})
         return resp.json()["items"]
 
-    return resp.json()
+    return requests.get(resp,
+                        headers=token).json()
