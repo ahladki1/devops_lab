@@ -31,9 +31,9 @@
     {% if pulls %}
     {% for pull in pulls %}
     <tr>
-        <th scope="row">{{ pull["num"] }}</th>
+        <th scope="row">{{ pull["number"] }}</th>
         <td>{{ pull["title"] }}</td>
-        <td><a href="{{ pull["link"] }}">Link</a></td>
+        <td><a href="{{ pull["html_url"] }}">Link</a></td>
     </tr>
     {% endfor %}
     {% endif %}
